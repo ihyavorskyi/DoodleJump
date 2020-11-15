@@ -7,12 +7,19 @@ export default class DevScript extends cc.Component {
 
     JumpTime: number = 1.4;
 
-    DownSpeed = 8;
+    DownSpeed = 10;
     
+    public static lol = false; 
+
+    x: number = null;
+    y: number = null;
 
     moveDown: boolean = true;
     curCol: boolean = false;
     jumpAction = cc.jumpBy(this.JumpTime, 0, 0, this.JumpHeight, 1);
+
+
+
 
     onLoad () {
         /*var node = new cc.Node("New Sprite");
@@ -34,23 +41,23 @@ export default class DevScript extends cc.Component {
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
         if(other.name == "New Sprite<BoxCollider>"){
-        self.node.stopAllActions();
-        //other.node.parent.runAction(cc.moveBy(1,0,-120))
-        this.moveDown = false;  
-        
-        let actionSequence = cc.sequence(
-            this.jumpAction,
-        null);
 
-        self.node.runAction(actionSequence);
-        //cc.find("Canvas/New Node").runAction(cc.moveBy(0.1,0,-75));
-        //console.log(other.name);
+            self.node.stopAllActions();
+            this.moveDown = false;  
+            self.node.runAction(this.jumpAction);
+
+
+           /*  
+            if((this.x == other.node.x && this.y == other.node.y)){
+                DevScript.lol = false;
+                console.log(this.x + "||||||||" + this.y)
+            }else if(this.y < other.node.y){                
+                DevScript.lol = true;
+                this.x = other.node.x;
+                this.y = other.node.y; 
+            } */
        }
     }
-
-  /*onCollisionExit(other: cc.Collider,self: cc.Collider){
-        console.log("Done colliding");
-    } */
 
     update (dt) {
         if(this.moveDown){
@@ -62,8 +69,5 @@ export default class DevScript extends cc.Component {
         if(this.node.getNumberOfRunningActions() == 0){
             this.moveDown = true;
         }
-      /*   if(this.node.y > 0){
-            this.nodeAll.y -=50;
-        } */
     }
 }

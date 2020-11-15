@@ -11,10 +11,10 @@ export default class CharacterGoingBeyond extends cc.Component {
     // start () {}
 
     update (dt) {
-        if(this.node.x > this.ScreenSize/2){
+        if(this.node.x > this.ScreenSize/2+15){
             this.node.x = -this.ScreenSize/2;
         }
-        if(this.node.x < -this.ScreenSize/2){
+        if(this.node.x < -this.ScreenSize/2-15){
             this.node.x = this.ScreenSize/2;
         }
     }

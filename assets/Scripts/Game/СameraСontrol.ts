@@ -25,4 +25,9 @@ export default class СameraСontrol extends cc.Component {
             }
         }
     }
+
+    public static newGame() {
+        this.deltaY = null;
+        this.platformY = null;
+    }
 }

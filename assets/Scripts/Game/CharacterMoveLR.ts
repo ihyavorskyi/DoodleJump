@@ -10,13 +10,11 @@ export default class CharacterMoveLR extends cc.Component {
     rightMove: boolean = false;
 
     onLoad() {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this)
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this)
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     }
 
-    start() {
-
-    }
+    start() { }
 
     onKeyUp(e: KeyboardEvent) {
         if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
@@ -49,7 +47,7 @@ export default class CharacterMoveLR extends cc.Component {
     }
 
     onDestroy() {
-        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this)
-        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this)
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     }
 }

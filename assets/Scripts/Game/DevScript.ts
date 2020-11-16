@@ -14,22 +14,28 @@ export default class DevScript extends cc.Component {
     jumpAction = cc.jumpBy(this.jumpTime, 0, 0, this.jumpHeight, 1);
 
     onLoad() {
-        /*var node = new cc.Node("New Sprite");
+        //Platform crate
+        /* let parentNode = cc.find("Game/New Node");
+        let node = new cc.Node("New Sprite");
+
         var sprite = node.addComponent(cc.Sprite);
-        var url = cc.url.raw("Textures/Platform.png");
-        sprite.spriteFrame = new cc.SpriteFrame(url); 
-        node.setPosition(0, 0);
-        this.node.parent.addChild(node);  */
-        /*      let otherNode = this.node;
-             otherNode.setPosition(0,0);
-             this.node.addChild(otherNode); */
+        sprite.spriteFrame = new cc.SpriteFrame(cc.url.raw("Textures/Platform.png"));
+
+        let boxCollider = node.addComponent(cc.BoxCollider);
+        boxCollider.offset = new cc.Vec2(0, 4);
+        boxCollider.size = new cc.Size(130, 8);
+
+        node.setPosition(10, 150);
+
+        parentNode.addChild(node); */
+
     }
 
     start() { }
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
-        if (other.name == "New Sprite<BoxCollider>") {            
+        if (other.name == "New Sprite<BoxCollider>") {
 
             self.node.stopAllActions();
             this.moveDown = false;
@@ -48,6 +54,11 @@ export default class DevScript extends cc.Component {
 
         if (this.node.getNumberOfRunningActions() == 0) {
             this.moveDown = true;
+        }
+
+        //game over
+        if(this.node.y < cc.find("Game/Main Camera").y - 450){
+            cc.director.loadScene("GameOver");
         }
     }
 }

@@ -1,12 +1,11 @@
+import СameraСontrol from "./СameraСontrol";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class DevScript extends cc.Component {
 
     downSpeed = 10;
-
-    deltaY: number = null;
-    platformY: number = null;
 
     moveDown: boolean = true;
 
@@ -26,36 +25,17 @@ export default class DevScript extends cc.Component {
              this.node.addChild(otherNode); */
     }
 
-    start() {
-
-    }
-
+    start() { }
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
-        if (other.name == "New Sprite<BoxCollider>") {
-
-            if (this.platformY == null) {
-                this.platformY = other.node.y;
-            }
+        if (other.name == "New Sprite<BoxCollider>") {            
 
             self.node.stopAllActions();
             this.moveDown = false;
             self.node.runAction(this.jumpAction);
 
-
-            if (this.platformY != other.node.y) {
-
-                this.deltaY = other.node.y - this.platformY;
-
-                if (this.deltaY > 0) {
-
-                    cc.find("Game/Main Camera").runAction(cc.moveBy(0.2, 0, this.deltaY));
-                    cc.find("Game/Wallpapers").runAction(cc.moveBy(0.2, 0, this.deltaY));
-
-                    this.platformY = other.node.y;
-                }
-            }
+            СameraСontrol.cameraUpdate(other);
         }
     }
 

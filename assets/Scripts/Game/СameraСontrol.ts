@@ -1,11 +1,28 @@
-import DevScript from "./DevScript";
-
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class СameraСontrol extends cc.Component {
 
-    update (dt) {
-        
+    static deltaY: number = null;
+    static platformY: number = null;
+
+    public static cameraUpdate(other: cc.Collider) {
+
+        if (this.platformY == null) {
+            this.platformY = other.node.y;
+        }
+
+        if (this.platformY != other.node.y) {
+
+            this.deltaY = other.node.y - this.platformY;
+
+            if (this.deltaY > 0) {
+
+                cc.find("Game/Main Camera").runAction(cc.moveBy(0.2, 0, this.deltaY));
+                cc.find("Game/Wallpapers").runAction(cc.moveBy(0.2, 0, this.deltaY));
+
+                this.platformY = other.node.y;
+            }
+        }
     }
 }

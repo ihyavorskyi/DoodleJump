@@ -1,3 +1,5 @@
+import DevScript from "./DevScript";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -17,9 +19,10 @@ export default class PlatformMoveDownScript extends cc.Component {
     }
 
     update(dt) {
+
         //this.node.y -= this.PlatformMoveDownSpeed;
 
-        if (this.r_move) {
+       /*  if (this.r_move) {
             this.node.x += 2;
             if (this.node.x > 250) {
                 this.r_move = false;
@@ -35,6 +38,6 @@ export default class PlatformMoveDownScript extends cc.Component {
         }
         if (this.node.y <= -600) {
             this.node.y = 830;
-        }
+        } */
     }
 }

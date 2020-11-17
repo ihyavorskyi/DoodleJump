@@ -183,7 +183,7 @@
       "array": [
         0,
         299.802,
-        536.0697249425675,
+        506.6248612138966,
         0,
         0,
         0,
@@ -255,7 +255,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Wallpapers",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
@@ -277,8 +277,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 2106,
-      "height": 2372
+      "width": 520,
+      "height": 900
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -290,15 +290,15 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        318.449,
+        300,
         0,
         0,
         0,
         0,
         1,
-        0.25,
-        0.394,
-        0.999
+        1,
+        1,
+        1
       ]
     },
     "_eulerAngles": {
@@ -312,7 +312,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "9bbfzzH49LJpIjOWG0JZe7"
+    "_id": "d5IvxUp7FFway72WAnp7Ov"
   },
   {
     "__type__": "cc.Sprite",
@@ -344,7 +344,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "99vQB3DHxGfqoAITjKFr4T"
+    "_id": "bfeAJaV7FEQr29jvk4rLIo"
   },
   {
     "__type__": "cc.Node",

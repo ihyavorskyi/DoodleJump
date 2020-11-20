@@ -13,8 +13,8 @@ export default class Score extends cc.Component {
 
     update(dt) {
 
-        if (this.score < this.characterNode.y)
-            this.score = this.characterNode.y;
+        if (this.score < this.characterNode.y / 10)
+            this.score = this.characterNode.y / 10;
 
         this.scoreLabel.string = "Score: " + this.score.toFixed();
     }

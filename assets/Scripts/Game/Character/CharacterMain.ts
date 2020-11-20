@@ -11,16 +11,10 @@ export default class CharacterMain extends cc.Component {
     @property(cc.Prefab)
     whitePlatform: cc.Prefab = null;
 
-    maxX = 200;
-    minX = -200;
-
+    moveDown: boolean = true;
     downSpeed = 10;
 
-    moveDown: boolean = true;
-
-    jumpHeight: number = 150;
-    jumpTime: number = 1.4;
-    jumpAction = cc.jumpBy(this.jumpTime, 0, 0, this.jumpHeight, 1);
+    jumpAction = cc.jumpBy(1.4, 0, 0, 150, 1);
 
     whatPlatform = 1;
 
@@ -29,24 +23,21 @@ export default class CharacterMain extends cc.Component {
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
         if (other.name == "PlatformGreen<BoxCollider>") {
-
-            self.node.stopAllActions();
-            this.moveDown = false;
-            self.node.runAction(this.jumpAction);
-
+            this.characterAction(self);
             СameraСontrol.cameraUpdate(other);
+
         } else if (other.name == "PlatformWhite<BoxCollider>") {
-
-            self.node.stopAllActions();
-            this.moveDown = false;
-            self.node.runAction(this.jumpAction);
-
+            this.characterAction(self);
             СameraСontrol.cameraUpdate(other);
-
             other.node.destroy();
         }
     }
 
+    characterAction(self: cc.Collider) {
+        self.node.stopAllActions();
+        this.moveDown = false;
+        self.node.runAction(this.jumpAction);
+    }
 
 
 

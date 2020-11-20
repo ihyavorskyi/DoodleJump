@@ -8,6 +8,8 @@ export default class CharacterMoveLR extends cc.Component {
     leftMove: boolean = false;
     rightMove: boolean = false;
 
+    static isBlocked: boolean = false;
+
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
@@ -33,6 +35,7 @@ export default class CharacterMoveLR extends cc.Component {
         }
     }
     update(dt) {
+        
 
         let delta = 0;
         if (this.leftMove) {
@@ -41,8 +44,10 @@ export default class CharacterMoveLR extends cc.Component {
             delta = this.Delta
         } else return;
 
-        let position = this.node.x + delta;
-        this.node.x = position;
+        if(!CharacterMoveLR.isBlocked){
+            let position = this.node.x + delta;
+            this.node.x = position;
+        }
     }
 
     onDestroy() {

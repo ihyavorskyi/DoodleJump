@@ -24,8 +24,4 @@ export default class GameOver extends cc.Component {
     mainMenu() {
         cc.director.loadScene("MainMenu");
     }
-
-    update(dt){        
-        
-    }
 }

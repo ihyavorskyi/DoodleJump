@@ -3,8 +3,7 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class CharacterMoveLR extends cc.Component {
 
-    @property
-    Delta: number = 3;
+    Delta: number = 6;
 
     leftMove: boolean = false;
     rightMove: boolean = false;

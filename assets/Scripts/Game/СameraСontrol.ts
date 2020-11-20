@@ -1,3 +1,5 @@
+import PlatformParent from "./PlatformParent";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -20,6 +22,7 @@ export default class СameraСontrol extends cc.Component {
 
                 cc.find("Game/Main Camera").runAction(cc.moveBy(0.2, 0, this.deltaY));
                 cc.find("Game/Wallpapers").runAction(cc.moveBy(0.2, 0, this.deltaY));
+                cc.find("Game/Score").runAction(cc.moveBy(0.2, 0, this.deltaY));
 
                 this.platformY = other.node.y;
             }

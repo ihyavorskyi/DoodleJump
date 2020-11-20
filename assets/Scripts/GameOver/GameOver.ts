@@ -26,9 +26,6 @@ export default class GameOver extends cc.Component {
     }
 
     update(dt){        
-        //game over
-        if (cc.find("Game/Character").y < cc.find("Game/Main Camera").y - 450) {
-            cc.director.loadScene("GameOver");
-        }
+        
     }
 }

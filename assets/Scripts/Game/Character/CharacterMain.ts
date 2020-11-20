@@ -74,5 +74,10 @@ export default class CharacterMain extends cc.Component {
                 }
             }
         }
+
+        //game over
+        if (this.node.y < cc.find("Game/Main Camera").y - 450) {
+            cc.director.loadScene("GameOver");
+        }
     }
 }

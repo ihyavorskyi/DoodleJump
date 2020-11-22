@@ -201,7 +201,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "2byyJRJUFI1I8oDndwvDSd"
+    "_id": "98LHjpfjJLKrIRpe0bxkfm"
   },
   {
     "__type__": "cc.Sprite",
@@ -219,10 +219,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "b16c98e8-49b1-4e33-9ff8-ce16a3e5050d"
+      "__uuid__": "d20c9e65-e060-4225-9c55-86170505bd61"
     },
     "_type": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 1,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -233,7 +233,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "51ImJQGX5E0J3Vao1UalH9"
+    "_id": "aaVT+wvCFEoKnVplnJYnQO"
   },
   {
     "__type__": "cc.Node",
@@ -277,7 +277,7 @@
       "array": [
         0,
         0,
-        506.6248612138966,
+        531.7395979236453,
         0,
         0,
         0,

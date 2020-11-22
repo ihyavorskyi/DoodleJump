@@ -36,8 +36,8 @@ export default class CharacterMain extends cc.Component {
     characterAction(self: cc.Collider) {
         self.node.stopAllActions();
 
-        let animationJump = self.getComponent(cc.Animation);
-        animationJump.play();
+        let jumpAnimation = self.getComponent(cc.Animation);
+        jumpAnimation.play();
         this.moveDown = false;
         self.node.runAction(this.jumpAction);
     }

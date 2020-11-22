@@ -201,7 +201,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "98LHjpfjJLKrIRpe0bxkfm"
+    "_id": "2byyJRJUFI1I8oDndwvDSd"
   },
   {
     "__type__": "cc.Sprite",
@@ -219,10 +219,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d20c9e65-e060-4225-9c55-86170505bd61"
+      "__uuid__": "8db4f4d5-2d0a-4ace-b71d-ad1d3a847690"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -233,7 +233,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "aaVT+wvCFEoKnVplnJYnQO"
+    "_id": "51ImJQGX5E0J3Vao1UalH9"
   },
   {
     "__type__": "cc.Node",

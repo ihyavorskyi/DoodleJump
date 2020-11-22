@@ -16,14 +16,12 @@ export default class GameOver extends cc.Component {
         this.mainMenuButton.node.on('click', this.mainMenu, this);
     }
 
-    playAgain(playAgainButton) {
+    playAgain() {
         СameraСontrol.newGame();
         cc.director.loadScene("Game");
     }
 
-    mainMenu(mainMenuButton) {
+    mainMenu() {
         cc.director.loadScene("MainMenu");
     }
-
-    start() { }
 }

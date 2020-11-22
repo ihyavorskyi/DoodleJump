@@ -3,11 +3,12 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class CharacterMoveLR extends cc.Component {
 
-    @property
-    Delta: number = 3;
+    Delta: number = 6;
 
     leftMove: boolean = false;
     rightMove: boolean = false;
+
+    static isBlocked: boolean = false;
 
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -34,6 +35,7 @@ export default class CharacterMoveLR extends cc.Component {
         }
     }
     update(dt) {
+        
 
         let delta = 0;
         if (this.leftMove) {
@@ -42,8 +44,10 @@ export default class CharacterMoveLR extends cc.Component {
             delta = this.Delta
         } else return;
 
-        let position = this.node.x + delta;
-        this.node.x = position;
+        if(!CharacterMoveLR.isBlocked){
+            let position = this.node.x + delta;
+            this.node.x = position;
+        }
     }
 
     onDestroy() {

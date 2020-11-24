@@ -15,8 +15,6 @@ export default class CharacterMoveLR extends cc.Component {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     }
 
-    start() { }
-
     onKeyUp(e: KeyboardEvent) {
         if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
             this.leftMove = false;
@@ -34,8 +32,7 @@ export default class CharacterMoveLR extends cc.Component {
             this.node.runAction(cc.flipX(false));
         }
     }
-    update(dt) {
-        
+    update(dt) {        
 
         let delta = 0;
         if (this.leftMove) {

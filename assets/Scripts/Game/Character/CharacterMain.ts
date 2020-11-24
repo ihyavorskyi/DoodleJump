@@ -11,25 +11,33 @@ export default class CharacterMain extends cc.Component {
     @property(cc.Prefab)
     whitePlatform: cc.Prefab = null;
 
-    moveDown: boolean = true;
+    costilNode = new cc.Node;
+
+    inJump = true;
+
+    moveDown = true;
     downSpeed = 10;
 
-    jumpAction = cc.jumpBy(1.4, 0, 0, 150, 1);
+    jumpAction = cc.jumpBy(2.33, 0, 0, 250, 1);
 
-    whatPlatform = 1;
+    platformId = 1;
 
     plarformGenerate: boolean = true;
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
-        if (other.name == "PlatformGreen<BoxCollider>") {
-            this.characterAction(self);
-            СameraСontrol.cameraUpdate(other);
+        if (this.inJump) {
+            if (other.name == "PlatformGreen<BoxCollider>") {
+                this.characterAction(self);
+                СameraСontrol.cameraUpdate(other);
 
-        } else if (other.name == "PlatformWhite<BoxCollider>") {
-            this.characterAction(self);
-            СameraСontrol.cameraUpdate(other);
-            other.node.destroy();
+            } else if (other.name == "PlatformWhite<BoxCollider>") {
+                this.characterAction(self);
+                СameraСontrol.cameraUpdate(other);
+                other.node.destroy();
+            }
+            this.inJump = false;
+            this.costilNode.runAction(cc.delayTime(1.15));
         }
     }
 
@@ -55,16 +63,20 @@ export default class CharacterMain extends cc.Component {
             this.moveDown = true;
         }
 
+        if (this.costilNode.getNumberOfRunningActions() == 0) {
+            this.inJump = true;
+        }
+
         if (this.plarformGenerate) {
             this.plarformGenerate = false;
             for (let index = 1; index < 100; index++) {
 
-                if (this.whatPlatform == 1) {
+                if (this.platformId == 1) {
                     PlatformsCreator.createPlatform(index, this.greenPlatform);
-                    this.whatPlatform = 2;
+                    this.platformId = 2;
                 } else {
                     PlatformsCreator.createPlatform(index, this.whitePlatform);
-                    this.whatPlatform = 1;
+                    this.platformId = 1;
                 }
             }
         }

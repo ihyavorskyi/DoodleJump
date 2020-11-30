@@ -1,4 +1,4 @@
-import CharacterMoveLR from "./Character/CharacterMoveLR";
+import CharacterMoveLR from "../Character/CharacterMoveLR";
 
 const { ccclass, property } = cc._decorator;
 

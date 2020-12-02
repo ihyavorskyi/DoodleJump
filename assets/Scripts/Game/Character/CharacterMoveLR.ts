@@ -30,7 +30,7 @@ export default class CharacterMoveLR extends cc.Component {
         }
         if (e.keyCode == cc.macro.KEY.space || e.keyCode == cc.macro.KEY.up || e.keyCode == cc.macro.KEY.w) {
             let hole = cc.instantiate(this.sphere);
-            hole.runAction(cc.moveBy(0.5, 0, 500));
+            // hole.runAction(cc.moveBy(0.5, 0, 500));
 
             if (this.leftOrRight == 1) {
                 hole.setPosition(this.node.getPosition().x + 20, this.node.getPosition().y + 100);

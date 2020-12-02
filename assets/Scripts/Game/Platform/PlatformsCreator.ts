@@ -20,8 +20,8 @@ export default class PlatformsCreator extends cc.Component {
     platformMaxY = 150;
     platformMinY = 25;
 
-    platformMaxYStep = 150;
-    platformMinYStep = 25;
+    platformMaxYStep = 200;
+    platformMinYStep = 200;
 
     creationLimit = 2000;
 

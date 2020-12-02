@@ -27,10 +27,13 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 5
       }
     ],
     "_prefab": {
-      "__id__": 5
+      "__id__": 6
     },
     "_opacity": 255,
     "_color": {
@@ -136,6 +139,25 @@
       "y": 0
     },
     "_radius": 70,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": {
+      "__uuid__": "1cc78e34-25e7-44e1-85b2-bf064c104646"
+    },
+    "_clips": [
+      {
+        "__uuid__": "1cc78e34-25e7-44e1-85b2-bf064c104646"
+      }
+    ],
+    "playOnLoad": false,
     "_id": ""
   },
   {

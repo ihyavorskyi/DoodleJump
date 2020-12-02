@@ -21,8 +21,6 @@ export default class NewClass extends cc.Component {
                 ));
             this.character = other.node;
             this.characterScale = other.node.getScale(cc.v2());
-        } else {
-            other.node.x = -other.node.x;
         }
     }
 
@@ -35,6 +33,10 @@ export default class NewClass extends cc.Component {
 
         if (this.node.getNumberOfRunningActions() == 0) {
             this.node.runAction(cc.rotateTo(10, 1000));
+        }
+
+        if (this.node.y < cc.find("Game/Main Camera").y - 600) {
+            this.node.destroy();
         }
     }
 }

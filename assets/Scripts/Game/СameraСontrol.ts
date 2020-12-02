@@ -1,3 +1,5 @@
+import CharacterMoveLR from "./Character/CharacterMoveLR";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -29,5 +31,6 @@ export default class СameraСontrol extends cc.Component {
     public static newGame() {
         this.deltaY = null;
         this.platformY = null;
+        CharacterMoveLR.isBlocked = false;
     }
 }

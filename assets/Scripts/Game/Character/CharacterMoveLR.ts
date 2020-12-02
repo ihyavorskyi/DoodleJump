@@ -16,23 +16,27 @@ export default class CharacterMoveLR extends cc.Component {
     }
 
     onKeyUp(e: KeyboardEvent) {
-        if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
-            this.leftMove = false;
-        } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
-            this.rightMove = false;
+        if (!CharacterMoveLR.isBlocked) {
+            if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
+                this.leftMove = false;
+            } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
+                this.rightMove = false;
+            }
         }
     }
 
     onKeyDown(e: KeyboardEvent) {
-        if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
-            this.leftMove = true;
-            this.node.runAction(cc.flipX(true));
-        } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
-            this.rightMove = true;
-            this.node.runAction(cc.flipX(false));
+        if (!CharacterMoveLR.isBlocked) {
+            if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
+                this.leftMove = true;
+                this.node.runAction(cc.flipX(true));
+            } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
+                this.rightMove = true;
+                this.node.runAction(cc.flipX(false));
+            }
         }
     }
-    update(dt) {        
+    update(dt) {
 
         let delta = 0;
         if (this.leftMove) {
@@ -41,7 +45,7 @@ export default class CharacterMoveLR extends cc.Component {
             delta = this.Delta
         } else return;
 
-        if(!CharacterMoveLR.isBlocked){
+        if (!CharacterMoveLR.isBlocked) {
             let position = this.node.x + delta;
             this.node.x = position;
         }

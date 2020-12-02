@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5a540adf-4c6f-493a-b1cc-6f4f461f2736",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 340,
+  "height": 452,
+  "platformSettings": {},
+  "subMetas": {
+    "RedDown": {
+      "ver": "1.0.4",
+      "uuid": "c9713102-5e94-477e-9a29-ce577ef5580d",
+      "rawTextureUuid": "5a540adf-4c6f-493a-b1cc-6f4f461f2736",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 21,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 340,
+      "height": 410,
+      "rawWidth": 340,
+      "rawHeight": 452,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

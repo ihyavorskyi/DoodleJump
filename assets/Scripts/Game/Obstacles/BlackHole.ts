@@ -10,14 +10,15 @@ export default class NewClass extends cc.Component {
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         if (other.name == "Character<BoxCollider>") {
+            CharacterMoveLR.isBlocked = true;
             other.node.stopAllActions();
+            other.node.getComponent(cc.Collider).destroy();
             other.node.runAction(
                 cc.spawn(
                     cc.rotateTo(4, 1500),
                     cc.scaleTo(4, 0, 0),
                     cc.moveTo(2, self.node.x, self.node.y)
                 ));
-            CharacterMoveLR.isBlocked = true;
             this.character = other.node;
             this.characterScale = other.node.getScale(cc.v2());
         } else {
@@ -30,6 +31,10 @@ export default class NewClass extends cc.Component {
             if (this.characterScale.x < 0.2 && this.characterScale.y < 0.2) {
                 cc.director.loadScene("GameOver");
             }
+        }
+
+        if (this.node.getNumberOfRunningActions() == 0) {
+            this.node.runAction(cc.rotateTo(10, 1000));
         }
     }
 }

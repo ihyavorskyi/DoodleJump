@@ -19,7 +19,7 @@ export default class CharacterMain extends cc.Component {
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
 
         if (this.inJump) {
-            if (other.name == "PlatformGreen<BoxCollider>") {
+            if (other.name == "PlatformGreen<BoxCollider>" || other.name == "PlatformBlue<BoxCollider>") {
                 this.characterAction(self);
                 СameraСontrol.cameraUpdate(other);
 

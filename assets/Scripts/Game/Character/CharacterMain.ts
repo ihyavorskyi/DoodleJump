@@ -1,4 +1,3 @@
-import PlatformsCreator from "../Platform/PlatformsCreator";
 import СameraСontrol from "../СameraСontrol";
 const { ccclass, property } = cc._decorator;
 
@@ -17,12 +16,10 @@ export default class CharacterMain extends cc.Component {
     jumpAction = cc.jumpBy(this.jumTime, 0, 0, 250, 1);
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-
-        if (this.inJump) {
+        if (this.inJump && self.name == "Character<BoxCollider>") {
             if (other.name == "PlatformGreen<BoxCollider>" || other.name == "PlatformBlue<BoxCollider>") {
                 this.characterAction(self);
                 СameraСontrol.cameraUpdate(other);
-
             } else if (other.name == "PlatformWhite<BoxCollider>") {
                 this.characterAction(self);
                 СameraСontrol.cameraUpdate(other);

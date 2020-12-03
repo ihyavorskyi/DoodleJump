@@ -3,17 +3,14 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class CharacterMoveLR extends cc.Component {
 
-    Delta: number = 6;
+    Delta: number = 8;
 
     leftMove: boolean = false;
     rightMove: boolean = false;
 
-    static isBlocked: boolean = false;
+    static isBlocked = false;
 
-    leftOrRight = 2;
-
-    @property(cc.Prefab)
-    sphere: cc.Prefab = null;
+    static leftOrRight = false;
 
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -27,15 +24,6 @@ export default class CharacterMoveLR extends cc.Component {
             } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
                 this.rightMove = false;
             }
-            if (e.keyCode == cc.macro.KEY.space || e.keyCode == cc.macro.KEY.up || e.keyCode == cc.macro.KEY.w) {
-                let hole = cc.instantiate(this.sphere);
-                if (this.leftOrRight == 1) {
-                    hole.setPosition(this.node.getPosition().x + 20, this.node.getPosition().y + 100);
-                } else if (this.leftOrRight == 2) {
-                    hole.setPosition(this.node.getPosition().x - 20, this.node.getPosition().y + 100);
-                }
-                this.node.parent.addChild(hole);
-            }
         }
     }
 
@@ -43,11 +31,11 @@ export default class CharacterMoveLR extends cc.Component {
         if (!CharacterMoveLR.isBlocked) {
             if (e.keyCode == cc.macro.KEY.left || e.keyCode == cc.macro.KEY.a) {
                 this.leftMove = true;
-                this.leftOrRight = 1;
+                CharacterMoveLR.leftOrRight = true;
                 this.node.runAction(cc.flipX(true));
             } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
                 this.rightMove = true;
-                this.leftOrRight = 2;
+                CharacterMoveLR.leftOrRight = false;
                 this.node.runAction(cc.flipX(false));
             }
         }

@@ -12,7 +12,8 @@ export default class NewClass extends cc.Component {
         if (other.name == "Character<BoxCollider>") {
             CharacterMoveLR.isBlocked = true;
             other.node.stopAllActions();
-            other.node.getComponent(cc.Collider).destroy();
+            other.node.getComponent(cc.BoxCollider).destroy();
+            other.node.getComponent(cc.PolygonCollider).destroy();
             other.node.runAction(
                 cc.spawn(
                     cc.rotateTo(4, 1500),

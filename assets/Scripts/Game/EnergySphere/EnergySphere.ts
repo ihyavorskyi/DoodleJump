@@ -3,15 +3,6 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class Sphere extends cc.Component {
 
-    onLoad() {
-        this.node.runAction(cc.sequence(
-            cc.moveBy(0.5, 0, 500),
-            cc.scaleTo(0.5, 0, 0),
-            null
-        ));
-    }
-
-
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         if (other.name == "NLO<PolygonCollider>") {
             other.node.getComponent(cc.Collider).destroy();
@@ -34,7 +25,6 @@ export default class Sphere extends cc.Component {
     update(dt) {
         if (this.node.scaleX < 0.1) {
             this.node.destroy();
-            console.log("DESTROED Bullet");
         }
     }
 }

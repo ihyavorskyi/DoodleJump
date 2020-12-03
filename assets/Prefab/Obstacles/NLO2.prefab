@@ -385,7 +385,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "5e3e9b7c-aa17-4b0d-8c2d-d14f585fe350"
     },
     "fileId": "70iCJHDLhFtJwyuZW/Euh0",
     "sync": false

@@ -25,14 +25,14 @@ export default class PlatformsCreator extends cc.Component {
 
     creationLimit = 2000;
 
-    nextLevelDifficulty = 5000;
+    nextLevelDifficulty = 10000;
 
     platformId = 0;
     platformCounter = 0;
 
     onLoad() {
         let platform = cc.instantiate(this.greenPlatform);
-        platform.setPosition(0, 0);
+        platform.setPosition(0, -20);
         this.node.addChild(platform);
 
         this.creator();
@@ -43,20 +43,15 @@ export default class PlatformsCreator extends cc.Component {
         switch (randomPlatform) {
             case 1:
                 this.platformId = 1;
-                console.log("WHITE PLATFORM");
                 break;
             case 2: case 3: case 4:
                 this.platformId = 2;
-                console.log("BLUE PLATFORM");
                 break;
             default:
                 this.platformId = 3;
-                console.log("GREEN PLATFORM");
                 break;
         }
     }
-
-
 
     creator() {
         let platformCount = 0;
@@ -106,7 +101,7 @@ export default class PlatformsCreator extends cc.Component {
             } else if (this.platformMinYStep < 200) {
                 this.platformMinYStep = this.platformMinYStep + 25;
             }
-            this.nextLevelDifficulty += 500;
+            this.nextLevelDifficulty += 5000;
             console.log("The next level of difficulty = " + this.nextLevelDifficulty);
         }
     }

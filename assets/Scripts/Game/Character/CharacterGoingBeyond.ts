@@ -7,11 +7,11 @@ export default class CharacterGoingBeyond extends cc.Component {
     ScreenWidth = 560;
 
     update(dt) {
-        if (this.node.x > this.ScreenWidth / 2 + 20) {
-            this.node.x = -this.ScreenWidth / 2;
+        if (this.node.x > this.ScreenWidth / 2 + 40) {
+            this.node.x = -this.ScreenWidth / 2 - 25;
         }
-        if (this.node.x < -this.ScreenWidth / 2 - 20) {
-            this.node.x = this.ScreenWidth / 2;
+        if (this.node.x < -this.ScreenWidth / 2 - 40) {
+            this.node.x = this.ScreenWidth / 2 + 25;
         }
     }
 }

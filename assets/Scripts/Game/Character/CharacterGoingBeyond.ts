@@ -4,14 +4,14 @@ const { ccclass, property } = cc._decorator;
 export default class CharacterGoingBeyond extends cc.Component {
 
     @property
-    ScreenWidth = 500;
+    ScreenWidth = 560;
 
     update(dt) {
-        if (this.node.x > this.ScreenWidth / 2 + 15) {
-            this.node.x = -this.ScreenWidth / 2;
+        if (this.node.x > this.ScreenWidth / 2 + 40) {
+            this.node.x = -this.ScreenWidth / 2 - 25;
         }
-        if (this.node.x < -this.ScreenWidth / 2 - 15) {
-            this.node.x = this.ScreenWidth / 2;
+        if (this.node.x < -this.ScreenWidth / 2 - 40) {
+            this.node.x = this.ScreenWidth / 2 + 25;
         }
     }
 }

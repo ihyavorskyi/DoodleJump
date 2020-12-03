@@ -1,4 +1,4 @@
-import PlatformParent from "./PlatformParent";
+import CharacterMoveLR from "./Character/CharacterMoveLR";
 
 const { ccclass, property } = cc._decorator;
 
@@ -20,10 +20,9 @@ export default class СameraСontrol extends cc.Component {
 
             if (this.deltaY > 0) {
 
-                cc.find("Game/Main Camera").runAction(cc.moveBy(0.2, 0, this.deltaY));
-                cc.find("Game/Wallpapers").runAction(cc.moveBy(0.2, 0, this.deltaY));
-                cc.find("Game/Score").runAction(cc.moveBy(0.2, 0, this.deltaY));
-
+                cc.find("Game/Main Camera").runAction(cc.moveBy(0.003 * this.deltaY, 0, this.deltaY));
+                cc.find("Game/Wallpapers").runAction(cc.moveBy(0.003 * this.deltaY, 0, this.deltaY));
+                cc.find("Game/NodeUI").runAction(cc.moveBy(0.003 * this.deltaY, 0, this.deltaY));
                 this.platformY = other.node.y;
             }
         }
@@ -32,5 +31,6 @@ export default class СameraСontrol extends cc.Component {
     public static newGame() {
         this.deltaY = null;
         this.platformY = null;
+        CharacterMoveLR.isBlocked = false;
     }
 }

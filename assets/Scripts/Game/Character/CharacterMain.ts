@@ -1,45 +1,42 @@
-import PlatformsCreator from "../Platform/PlatformsCreator";
 import СameraСontrol from "../СameraСontrol";
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class CharacterMain extends cc.Component {
 
-    @property(cc.Prefab)
-    greenPlatform: cc.Prefab = null;
+    fakeNodeForCheckJumpTime = new cc.Node;
 
-    @property(cc.Prefab)
-    whitePlatform: cc.Prefab = null;
+    inJump = true;
 
-    moveDown: boolean = true;
-    downSpeed = 10;
+    moveDown = true;
+    downSpeed = 13;
 
-    jumpAction = cc.jumpBy(1.4, 0, 0, 150, 1);
+    jumTime = 1.2;
 
-    whatPlatform = 1;
-
-    plarformGenerate: boolean = true;
+    jumpAction = cc.jumpBy(this.jumTime, 0, 0, 250, 1);
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-
-        if (other.name == "PlatformGreen<BoxCollider>") {
-            this.characterAction(self);
-            СameraСontrol.cameraUpdate(other);
-
-        } else if (other.name == "PlatformWhite<BoxCollider>") {
-            this.characterAction(self);
-            СameraСontrol.cameraUpdate(other);
-            other.node.destroy();
+        if (this.inJump && self.name == "Character<BoxCollider>") {
+            if (other.name == "PlatformGreen<BoxCollider>" || other.name == "PlatformBlue<BoxCollider>") {
+                this.characterAction(self);
+                СameraСontrol.cameraUpdate(other);
+            } else if (other.name == "PlatformWhite<BoxCollider>") {
+                this.characterAction(self);
+                СameraСontrol.cameraUpdate(other);
+                other.node.destroy();
+            }
+            this.inJump = false;
+            this.fakeNodeForCheckJumpTime.runAction(cc.delayTime(this.jumTime / 2 - 0.02));
         }
     }
 
     characterAction(self: cc.Collider) {
         self.node.stopAllActions();
+        let jumpAnimation = self.getComponent(cc.Animation);
+        jumpAnimation.play();
         this.moveDown = false;
         self.node.runAction(this.jumpAction);
     }
-
-
 
     update(dt) {
         if (this.moveDown) {
@@ -52,18 +49,8 @@ export default class CharacterMain extends cc.Component {
             this.moveDown = true;
         }
 
-        if (this.plarformGenerate) {
-            this.plarformGenerate = false;
-            for (let index = 1; index < 100; index++) {
-
-                if (this.whatPlatform == 1) {
-                    PlatformsCreator.createPlatform(index, this.greenPlatform);
-                    this.whatPlatform = 2;
-                } else {
-                    PlatformsCreator.createPlatform(index, this.whitePlatform);
-                    this.whatPlatform = 1;
-                }
-            }
+        if (this.fakeNodeForCheckJumpTime.getNumberOfRunningActions() == 0) {
+            this.inJump = true;
         }
 
         //game over

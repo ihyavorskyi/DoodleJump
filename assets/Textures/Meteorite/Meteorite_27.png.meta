@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "33644cf6-a583-4e31-b125-9ec7b05644a0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 94,
+  "height": 95,
+  "platformSettings": {},
+  "subMetas": {
+    "Meteorite_27": {
+      "ver": "1.0.4",
+      "uuid": "a8917ec2-0354-492f-921f-230f695d2c31",
+      "rawTextureUuid": "33644cf6-a583-4e31-b125-9ec7b05644a0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 3,
+      "offsetY": 0.5,
+      "trimX": 14,
+      "trimY": 12,
+      "width": 72,
+      "height": 70,
+      "rawWidth": 94,
+      "rawHeight": 95,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

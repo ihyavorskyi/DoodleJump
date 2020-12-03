@@ -13,7 +13,9 @@ export default class Sphere extends cc.Component {
 
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
-        if (other.name == "NLO1<PolygonCollider>") {
+        if (other.name == "NLO<PolygonCollider>") {
+            other.node.getComponent(cc.Collider).destroy();
+            self.node.getComponent(cc.Collider).destroy();
             self.node.stopAllActions();
             other.node.runAction(cc.scaleTo(0.5, 0, 0));
             self.node.runAction(cc.spawn(

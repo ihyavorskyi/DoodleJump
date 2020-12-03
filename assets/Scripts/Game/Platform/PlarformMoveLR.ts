@@ -16,7 +16,7 @@ export default class NewClass extends cc.Component {
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         let leftTrue = false;
-        if (other.name == "BlackHole<CircleCollider>") {
+        if (other.name == "BlackHole<CircleCollider>" || other.name == "NLO<PolygonCollider>") {
             if (this.rightMove) {
                 this.rightMove = false;
                 this.leftMove = true;
@@ -33,13 +33,13 @@ export default class NewClass extends cc.Component {
     update(dt) {
         if (this.leftMove) {
             this.node.x -= this.deltaX;
-            if (this.node.x < -200) {
+            if (this.node.x < -230) {
                 this.leftMove = false;
                 this.rightMove = true;
             }
         } else if (this.rightMove) {
             this.node.x += this.deltaX;
-            if (this.node.x > 200) {
+            if (this.node.x > 230) {
                 this.leftMove = true;
                 this.rightMove = false;
             }

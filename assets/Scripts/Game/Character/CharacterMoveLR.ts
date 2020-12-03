@@ -27,17 +27,15 @@ export default class CharacterMoveLR extends cc.Component {
             } else if (e.keyCode == cc.macro.KEY.right || e.keyCode == cc.macro.KEY.d) {
                 this.rightMove = false;
             }
-        }
-        if (e.keyCode == cc.macro.KEY.space || e.keyCode == cc.macro.KEY.up || e.keyCode == cc.macro.KEY.w) {
-            let hole = cc.instantiate(this.sphere);
-            // hole.runAction(cc.moveBy(0.5, 0, 500));
-
-            if (this.leftOrRight == 1) {
-                hole.setPosition(this.node.getPosition().x + 20, this.node.getPosition().y + 100);
-            } else if (this.leftOrRight == 2) {
-                hole.setPosition(this.node.getPosition().x - 20, this.node.getPosition().y + 100);
+            if (e.keyCode == cc.macro.KEY.space || e.keyCode == cc.macro.KEY.up || e.keyCode == cc.macro.KEY.w) {
+                let hole = cc.instantiate(this.sphere);
+                if (this.leftOrRight == 1) {
+                    hole.setPosition(this.node.getPosition().x + 20, this.node.getPosition().y + 100);
+                } else if (this.leftOrRight == 2) {
+                    hole.setPosition(this.node.getPosition().x - 20, this.node.getPosition().y + 100);
+                }
+                this.node.parent.addChild(hole);
             }
-            this.node.parent.addChild(hole);
         }
     }
 

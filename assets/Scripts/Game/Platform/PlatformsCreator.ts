@@ -15,13 +15,13 @@ export default class PlatformsCreator extends cc.Component {
     @property(cc.Prefab)
     bluePlatform: cc.Prefab = null;
 
-    platformMaxX = 200;
-    platformMinX = -200;
+    platformMaxX = 230;
+    platformMinX = -230;
     platformMaxY = 150;
     platformMinY = 25;
 
-    platformMaxYStep = 200;
-    platformMinYStep = 200;
+    platformMaxYStep = 175;
+    platformMinYStep = 25;
 
     creationLimit = 2000;
 

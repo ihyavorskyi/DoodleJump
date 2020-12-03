@@ -6,8 +6,8 @@ export default class BlackHoleGenerator extends cc.Component {
     @property(cc.Prefab)
     blackHole: cc.Prefab = null;
 
-    maxX = 180;
-    minX = -180;
+    maxX = 210;
+    minX = -210;
 
     maxY = 7500;
     minY = 2500;

@@ -17,7 +17,7 @@ export default class NewClass extends cc.Component {
                 cc.spawn(
                     cc.rotateTo(4, 1500),
                     cc.scaleTo(4, 0, 0),
-                    cc.moveTo(2, self.node.x, self.node.y)
+                    cc.moveTo(1, self.node.x, self.node.y)
                 ));
             this.character = other.node;
             this.characterScale = other.node.getScale(cc.v2());

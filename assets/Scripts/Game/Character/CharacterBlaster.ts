@@ -9,7 +9,7 @@ export default class CharacterBlaster extends cc.Component {
     sphere: cc.Prefab = null;
 
     onLoad() {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyUp, this);
     }
 
     onKeyUp(e: KeyboardEvent) {
@@ -21,9 +21,9 @@ export default class CharacterBlaster extends cc.Component {
     }
 
     createSphere() {
-        let index = -85;
+        let index = -50;
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             let hole = cc.instantiate(this.sphere);
             if (CharacterMoveLR.leftOrRight) {
                 hole.setPosition(this.node.getPosition().x + 20, this.node.getPosition().y + 100);
@@ -38,7 +38,7 @@ export default class CharacterBlaster extends cc.Component {
                 null
             ));
 
-            index += 85;
+            index += 100;
         }
     }
 

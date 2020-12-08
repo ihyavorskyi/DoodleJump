@@ -9,7 +9,7 @@ export default class CharacterBlaster extends cc.Component {
     sphere: cc.Prefab = null;
 
     onLoad() {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyUp, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     }
 
     onKeyUp(e: KeyboardEvent) {
@@ -37,7 +37,6 @@ export default class CharacterBlaster extends cc.Component {
                 cc.scaleTo(0.5, 0, 0),
                 null
             ));
-
             index += 100;
         }
     }

@@ -195,7 +195,7 @@
       "array": [
         0,
         299.802,
-        536.9357503463519,
+        531.7395979236453,
         0,
         0,
         0,
@@ -1292,7 +1292,7 @@
   {
     "__type__": "cc.Node",
     "_name": "NodeUI",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
@@ -1379,7 +1379,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88.82,
+      "width": 143.14,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1435,15 +1435,17 @@
     "_fontSize": 34,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "79f765f2-1c6b-4820-909c-b9e9eb26258f"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "",
+    "_N$fontFamily": "Anime Ace v05",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "ddM4Y4wqdN+okX36L/KRJ3"
@@ -1598,7 +1600,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "969f55e2-04ae-4b0c-8f8c-a7bcafe4717e"
+      "__uuid__": "d3c7a314-1c3d-480a-8e7c-39b6cdaa565f"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1703,7 +1705,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "969f55e2-04ae-4b0c-8f8c-a7bcafe4717e"
+      "__uuid__": "d3c7a314-1c3d-480a-8e7c-39b6cdaa565f"
     },
     "_N$pressedSprite": null,
     "pressedSprite": null,

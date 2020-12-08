@@ -10,7 +10,7 @@ export default class BlackHoleGenerator extends cc.Component {
     minX = -210;
 
     maxY = 7500;
-    minY = 0;
+    minY = 2500;
 
     onLoad() {
         this.createBlackHole();
@@ -27,8 +27,8 @@ export default class BlackHoleGenerator extends cc.Component {
 
     update(dt) {
         if (cc.find("Game/Character").y > this.minY) {
-            this.minY += 500;
-            this.maxY += 0;
+            this.minY += 5000;
+            this.maxY += 5000;
             this.createBlackHole();
         }
     }

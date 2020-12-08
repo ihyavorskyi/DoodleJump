@@ -1,3 +1,4 @@
+import { director } from './../../../creator.d';
 const { ccclass, property } = cc._decorator;
 
 @ccclass

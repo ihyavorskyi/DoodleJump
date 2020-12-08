@@ -5,6 +5,8 @@ export default class Sphere extends cc.Component {
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         if (other.name == "NLO<PolygonCollider>") {
+            let audio = this.node.getComponent('cc.AudioSource');
+            audio.play();
             other.node.getComponent(cc.Collider).destroy();
             self.node.getComponent(cc.Collider).destroy();
             self.node.stopAllActions();

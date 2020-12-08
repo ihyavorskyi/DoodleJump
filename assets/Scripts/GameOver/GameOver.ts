@@ -14,6 +14,7 @@ export default class GameOver extends cc.Component {
     onLoad() {
         this.playAgainButton.node.on('click', this.playAgain, this);
         this.mainMenuButton.node.on('click', this.mainMenu, this);
+        
     }
 
     playAgain() {

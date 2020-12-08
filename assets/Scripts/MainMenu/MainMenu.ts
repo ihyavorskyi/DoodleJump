@@ -9,6 +9,7 @@ export default class MainMenu extends cc.Component {
     playGameButton: cc.Button = null;
 
     onLoad() {
+        cc.debug.setDisplayStats(false);
         this.playGameButton.node.on('click', this.playGame, this);
     }
 

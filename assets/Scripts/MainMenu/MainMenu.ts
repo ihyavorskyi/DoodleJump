@@ -18,7 +18,7 @@ export default class MainMenu extends cc.Component {
     onLoad() {
         this.playGameButton.node.on('click', this.playGame, this);
         cc.debug.setDisplayStats(false);
-        this.scoreLabel.string = "Record: " + MainMenu.score;
+        this.scoreLabel.string = "Best score: " + MainMenu.score;
     }
 
     playGame() {

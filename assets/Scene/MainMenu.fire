@@ -189,7 +189,7 @@
       "array": [
         0,
         0,
-        531.7395979236453,
+        275.21205329094687,
         0,
         0,
         0,
@@ -1452,7 +1452,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 290.14,
+      "width": 293.84,
       "height": 63
     },
     "_anchorPoint": {
@@ -1503,9 +1503,9 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Record: ",
-    "_N$string": "Record: ",
-    "_fontSize": 50,
+    "_string": "Best Score:",
+    "_N$string": "Best Score:",
+    "_fontSize": 36,
     "_lineHeight": 50,
     "_enableWrapText": true,
     "_N$file": {

@@ -37,7 +37,7 @@ It's our game where you can try to live as long as possible in deep space..
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Our application were developed using: 
 * [CocosCreator](https://www.cocos.com/en/creator)
 * [Cocos2dX](https://www.cocos.com/en/cocos2dx)
 * [Typescript](https://www.typescriptlang.org/)
@@ -45,10 +45,6 @@ This section should list any major frameworks that you built your project using.
 
 
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.

@@ -58,4 +58,5 @@ Use this space to show useful examples of how a project can be used.
 ### To start game you should: 
 * clone this repository
 * move to <b>build</b> folder
+* select one of the folders available in <b>build</b>
 * run one of the Start.bat files (You can choose different browsers to start game)

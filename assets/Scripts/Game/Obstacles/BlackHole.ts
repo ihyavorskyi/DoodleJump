@@ -10,6 +10,8 @@ export default class NewClass extends cc.Component {
 
     onCollisionEnter(other: cc.Collider, self: cc.Collider) {
         if (other.name == "Character<BoxCollider>") {
+            let audio = this.node.getComponent('cc.AudioSource');
+            audio.play();
             CharacterMoveLR.isBlocked = true;
             other.node.stopAllActions();
             other.node.getComponent(cc.BoxCollider).destroy();
@@ -22,6 +24,7 @@ export default class NewClass extends cc.Component {
                 ));
             this.character = other.node;
             this.characterScale = other.node.getScale(cc.v2());
+            
         }
     }
 

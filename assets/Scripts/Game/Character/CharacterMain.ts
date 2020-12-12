@@ -27,6 +27,9 @@ export default class CharacterMain extends cc.Component {
             }
             this.inJump = false;
             this.fakeNodeForCheckJumpTime.runAction(cc.delayTime(this.jumTime / 2 - 0.02));
+            let audio = this.node.getComponent('cc.AudioSource');
+            audio.play();
+            
         }
     }
 

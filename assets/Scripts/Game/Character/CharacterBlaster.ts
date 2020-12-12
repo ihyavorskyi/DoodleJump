@@ -21,9 +21,9 @@ export default class CharacterBlaster extends cc.Component {
     }
 
     createSphere() {
-        let index = -85;
+        let index = -50;
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             let hole = cc.instantiate(this.sphere);
             if (CharacterMoveLR.leftOrRight) {
                 hole.setPosition(this.node.getPosition().x + 20, this.node.getPosition().y + 100);
@@ -37,8 +37,7 @@ export default class CharacterBlaster extends cc.Component {
                 cc.scaleTo(0.5, 0, 0),
                 null
             ));
-
-            index += 85;
+            index += 100;
         }
     }
 

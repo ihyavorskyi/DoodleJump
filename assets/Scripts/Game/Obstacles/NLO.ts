@@ -33,7 +33,12 @@ export default class NewClass extends cc.Component {
             self.node.y += 500;
         }
         if (other.name == "Character<PolygonCollider>") {
-            cc.director.loadScene("GameOver");
+
+        
+                cc.director.loadScene("GameOver");
+
+           
+
         }
     }
 

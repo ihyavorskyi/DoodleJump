@@ -3,7 +3,6 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class CharacterMainMenu extends cc.Component {
 
-
     jumTime = 1.2;
     jumpAction = cc.jumpBy(this.jumTime, 0, 0, 250, 1);
 

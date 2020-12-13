@@ -40,6 +40,4 @@ export default class CharacterBlaster extends cc.Component {
             index += 100;
         }
     }
-
-    update(dt) { }
 }
